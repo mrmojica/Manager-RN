@@ -1,9 +1,10 @@
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import {
-	EMPLOYEE_UPDATE,
-	EMPLOYEE_CREATE,
-	EMPLOYEES_FETCH_SUCCESS
+  EMPLOYEE_UPDATE,
+  EMPLOYEE_CREATE,
+  EMPLOYEES_FETCH_SUCCESS,
+  EMPLOYEE_SAVE_SUCCESS
 } from './types';
 
 export const employeeUpdate = ({ prop, value }) => {
@@ -14,7 +15,6 @@ export const employeeUpdate = ({ prop, value }) => {
 };
 
 export const employeeCreate = ({ name, phone, shift }) => {
-	//get current user
   const { currentUser } = firebase.auth();
 
   return (dispatch) => {
@@ -22,11 +22,9 @@ export const employeeCreate = ({ name, phone, shift }) => {
       .push({ name, phone, shift })
       .then(() => {
         dispatch({ type: EMPLOYEE_CREATE });
-        //type reset removes the back button that would originally pop up in the header
         Actions.employeeList({ type: 'reset' });
       });
   };
-
 };
 
 export const employeesFetch = () => {
@@ -65,4 +63,3 @@ export const employeeDelete = ({ uid }) => {
       });
   };
 };
-Contact GitHub API Training Shop Blog About
