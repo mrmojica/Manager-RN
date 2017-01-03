@@ -6,13 +6,13 @@ import { employeesFetch } from '../actions';
 import ListItem from './ListItem';
 
 class EmployeeList extends Component {
-	componentWillMount() {
-		this.props.employeesFetch();
+  componentWillMount() {
+    this.props.employeesFetch();
 
-		 this.createDataSource(this.props);
-	}
+    this.createDataSource(this.props);
+  }
 
-	componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     // nextProps are the next set of props that this component
     // will be rendered with
     // this.props is still the old set of props
@@ -20,7 +20,7 @@ class EmployeeList extends Component {
     this.createDataSource(nextProps);
   }
 
-	createDataSource({ employees }) {
+  createDataSource({ employees }) {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
