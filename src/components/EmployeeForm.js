@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { View, Text, Picker } from 'react-native';
 import { connect } from 'react-redux';
@@ -12,7 +11,7 @@ class EmployeeForm extends Component {
         <CardSection>
           <Input
             label="Name"
-            placeholder="Mike"
+            placeholder="Jane"
             value={this.props.name}
             onChangeText={value => this.props.employeeUpdate({ prop: 'name', value })}
           />
@@ -21,7 +20,7 @@ class EmployeeForm extends Component {
         <CardSection>
           <Input
             label="Phone"
-            placeholder="510-222-2222"
+            placeholder="555-555-5555"
             value={this.props.phone}
             onChangeText={value => this.props.employeeUpdate({ prop: 'phone', value })}
           />

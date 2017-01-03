@@ -2,8 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 const CardSection = (props) => {
-	return (
-		//style can take an array which the style from the right will override the previous styles.
+  return (
     <View style={[styles.containerStyle, props.style]}>
       {props.children}
     </View>
@@ -23,4 +22,3 @@ const styles = {
 };
 
 export { CardSection };
-

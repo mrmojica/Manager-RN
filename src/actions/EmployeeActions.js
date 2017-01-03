@@ -32,7 +32,6 @@ export const employeesFetch = () => {
 
   return (dispatch) => {
     firebase.database().ref(`/users/${currentUser.uid}/employees`)
-    //snapshot allows anytime new data comes in it will run the dispatch / fetch and get the updated data value
       .on('value', snapshot => {
         dispatch({ type: EMPLOYEES_FETCH_SUCCESS, payload: snapshot.val() });
       });
